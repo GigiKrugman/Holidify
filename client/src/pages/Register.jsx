@@ -8,13 +8,18 @@ export default function Register() {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
 
-  function registerUser(e) {
+  async function registerUser(e) {
     e.preventDefault();
-    axios.post("/register", {
-      name,
-      email,
-      password,
-    });
+    try {
+      await axios.post("/user/register", {
+        name,
+        email,
+        password,
+      });
+      alert("Registration Succesful!");
+    } catch (error) {
+      alert("Registration Not Succesful...try later!");
+    }
   }
 
   return (
@@ -24,7 +29,7 @@ export default function Register() {
           <h1 className="text-4xl text-center mb-4">Register</h1>
           <form className="max w-2l mx-auto border" onSubmit={registerUser}>
             <input
-              type="name"
+              type="text"
               placeholder="max mustermann"
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -39,7 +44,7 @@ export default function Register() {
               type="password"
               placeholder="password"
               value={password}
-              onChange={(e) => setPassword(e.target.password)}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <button className="primary"> Register</button>
             <div className="text-center py-2 text-gray-500">

@@ -1,23 +1,27 @@
 const express = require("express");
 var cors = require("cors");
 const app = express();
+const userRoute = require("./routes/user");
+//const User = require("./models/User");
+//const bcrypt = require("bcrypt");
+//const jwt = require("jsonwebtoken");
+require("dotenv").config();
+const connectDb = require("../server/db/connect");
+
+//const bcryptSalt = bcrypt.genSaltSync(10);
+//const jwtSecret = "1234";
+connectDb();
 
 app.use(express.json());
 
 app.use(
   cors({
     credentials: true,
-    origin: "http://127.0.0.1:5173",
+    origin: "http://localhost:5173",
   })
 );
 
-app.get("/test", (req, res) => {
-  res.json("Test Ok!");
-});
-
-app.post("/register", (req, res) => {
-  const { name, email, password } = req.body;
-  res.json({ name, email, password });
-});
-
-app.listen(3000);
+app.use("/user", userRoute),
+  app.listen(3000, () => {
+    console.log("Server is running on port 3000");
+  });

@@ -1,5 +1,5 @@
 //import React from 'react'
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 //import Register from "./Register";
 import axios from "axios";
@@ -7,6 +7,7 @@ import { UserContext } from "../userContext";
 //import IndexPage from "./IndexPage";
 export default function Login() {
   //const navigate = useNavigate();
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [redirect, setRedirect] = useState(false);
@@ -18,17 +19,22 @@ export default function Login() {
     try {
       const response = await axios.post("/user/login", { email, password });
       setUser(response.data);
-      alert("Login Successful");
+
       setRedirect(true); // Set the redirect state to true
     } catch (error) {
       console.log(error);
     }
   }
 
+  if (redirect) {
+    navigate("/home");
+    return null;
+  }
+
   //
 
   return redirect ? (
-    <Navigate to={"/"} />
+    navigate("/")
   ) : (
     <div className="mt-4 grow flex items-center justify-around">
       <div className="mb-32">

@@ -18,7 +18,7 @@ export default function Register() {
         email,
         password,
       });
-      alert("Registration Succesful!");
+
       setRegistrationSuccesful(true);
     } catch (error) {
       alert("Registration Not Succesful...try later!");

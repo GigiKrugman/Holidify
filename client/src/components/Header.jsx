@@ -58,7 +58,7 @@ export default function Header() {
           />
         </svg>
       </div>
-      <Link to={"/login"} className="flex items-center">
+      <Link to={"/home/login"} className="flex items-center">
         <div className="bars">
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -2,6 +2,7 @@ const express = require("express");
 var cors = require("cors");
 const app = express();
 const userRoute = require("./routes/user");
+var cookieParser = require("cookie-parser");
 //const User = require("./models/User");
 //const bcrypt = require("bcrypt");
 //const jwt = require("jsonwebtoken");

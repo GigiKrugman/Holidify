@@ -46,7 +46,11 @@ const login = async (req, res) => {
       if (err) {
         return res.status(500).json({ message: "Error generating Token" });
       }
-      res.cookie("token", token).json({ message: "Logged in" });
+      res.cookie("token", token).json({
+        name: userDoc.name,
+        email: userDoc.email,
+        id: userDoc._id,
+      });
     }
   );
 };

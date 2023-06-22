@@ -49,7 +49,7 @@ export default function Login() {
           <button className="primary"> Login</button>
           <div className="text-center py-2 text-gray-500">
             Do not have an account yet?
-            <Link to={"/register"} className="underline text-black">
+            <Link to={"/home/register"} className="underline text-black">
               Register Now
             </Link>
           </div>

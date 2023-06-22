@@ -26,7 +26,7 @@ export default function Register() {
   }
 
   if (registrationSuccessful) {
-    return <Navigate to="/login" />;
+    return <Navigate to="/home/login" />;
   }
 
   return (
@@ -56,7 +56,7 @@ export default function Register() {
             <button className="primary"> Register</button>
             <div className="text-center py-2 text-gray-500">
               Already Have an account?
-              <Link to={"/login"} className="underline text-black">
+              <Link to={"/home/login"} className="underline text-black">
                 Sign In
               </Link>
             </div>

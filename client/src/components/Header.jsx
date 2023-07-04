@@ -14,27 +14,30 @@ export default function Header() {
         <Link
           to="/about"
           element={<About />}
-          className="mr-4 text-lg underline decoration-8 decoration-sky-400"
+          className="mr-4 text-xl font-semibold text-sky-700"
         >
           About us
         </Link>
         <Link
           to="/experiences"
           element={<TravelExperiences />}
-          className="mr-4 text-lg underline decoration-8 decoration-sky-400"
+          className="mr-4 text-xl font-semibold text-sky-700"
         >
           Experiences
         </Link>
         <Link
           to="accomodations"
           element={<Accomodations />}
-          className="mr-2 text-lg underline decoration-8 decoration-sky-400"
+          className="mr-4 text-xl font-semibold text-sky-700"
         >
           Accomodations
         </Link>
       </div>
       <div className="flex items-center ">
-        <Link to="/home/login" className="text-2xl ">
+        <Link
+          to="/home/login"
+          className=" mr-4 text-2xl font-semibold border-4 rounded-2xl border-sky-600 text-sky-700 py-2 px-4"
+        >
           Sign In
         </Link>
       </div>

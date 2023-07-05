@@ -13,13 +13,14 @@ export default function LandingPage() {
       <HeroLandingPage />
       <div className="flex flex-col justify-center items-center mt-9">
         <h2 className="text-5xl font-bold mb-3 p-3">
-          The best experience are waiting for you!
+          The best experience are waiting for{" "}
+          <span className=" text-sky-600">you</span> !
         </h2>
         <h4 className="text-2xl text-neutral-800 font-semibold">
           Why Choose us:
         </h4>
       </div>
-      <div className="flex justify-around w-full h-150 p-5 mt-10">
+      <div className="flex justify-around w-full h-150 p-5 mt-10 mx-auto">
         <div className="flex flex-col items-center">
           <TravelGlobe className="h-[100px] w-[200px]" />
           <h5 className="text-2xl text-stone-800   font-bold">

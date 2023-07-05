@@ -8,7 +8,9 @@ export default function Header() {
   return (
     <div className="flex flex-items justify-around items-stretch row  w-full h-30 p-4">
       <div>
-        <h3 className="text-4xl  text-sky-500">Holidify</h3>
+        <Link to="/home">
+          <h3 className="text-4xl  text-sky-500">Holidify</h3>
+        </Link>
       </div>
       <div className="flex flex-items items-center">
         <Link

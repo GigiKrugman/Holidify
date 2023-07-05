@@ -5,7 +5,7 @@ export default function ProductsWidget() {
     <div className="grid grid-cols-2  gap-4 mt-72 p-10">
       <div className="flex items-center justify-center">
         <Link
-          to="experiences"
+          to="/experiences"
           className="flex flex-row items-center text-2xl font-semibold text-sky-700"
         >
           <h4 className="text-4xl font-semibold">Browse Experiences</h4>
@@ -27,7 +27,7 @@ export default function ProductsWidget() {
       </div>
       <div className="flex flex-row items-center justify-center">
         <Link
-          to="accomodations"
+          to="/accomodations"
           className="flex flex-row items-center text-2xl font-semibold text-sky-700"
         >
           <h4 className="text-4xl font-semibold">Browse Accomodations</h4>

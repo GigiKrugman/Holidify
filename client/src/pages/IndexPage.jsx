@@ -40,11 +40,16 @@ export default function IndexPage() {
           className="object-cover w-full h-[700px] absolute"
           src="https://images.unsplash.com/photo-1522878129833-838a904a0e9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTE0fHx0cmF2ZWx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60"
         />
-        <div className="absolute inset-0 flex items-center justify-center ">
+        <div className="absolute inset-0 flex flex-col items-center justify-center ">
           <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-9xl font-extrabold text-white text-center">
             Best Travel Platform 2023
           </h1>
-          <Link to="/about">About us</Link>
+          <Link
+            className="mt-4 text-4xl font-bold border-4 rounded-lg text-white p-9"
+            to="/about"
+          >
+            About us
+          </Link>
         </div>
       </div>
       <ProductsWidget />

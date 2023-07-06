@@ -4,7 +4,7 @@ import IndexPage from "./pages/IndexPage";
 import Register from "./pages/Register";
 import Layout from "./Layout";
 import axios from "axios";
-import { UserProvider } from "./userContext";
+import { UserProvider } from "./context/UserContext";
 import LandingPage from "./pages/LandingPage";
 import About from "./pages/About";
 import TravelExperiences from "./pages/TravelExperiences";

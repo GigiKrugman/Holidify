@@ -9,6 +9,8 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   //const [redirect, setRedirect] = useState(false);
+  const userContext = useContext(UserContext);
+  console.log(userContext);
 
   const { setUser } = useContext(UserContext);
 
@@ -18,7 +20,7 @@ export default function Login() {
       const response = await axios.post("/user/login", { email, password });
       setUser(response.data);
       //those two lines added now:
-      localStorage.setItem("user", JSON.stringify(response.data));
+      // localStorage.setItem("user", JSON.stringify(response.data));
       navigate("/home");
       //setRedirect(true); // Set the redirect state to true
     } catch (error) {
@@ -26,16 +28,6 @@ export default function Login() {
     }
   }
 
-  // if (redirect) {
-  //   navigate("/home");
-  //   return null;
-  // }
-
-  //
-
-  //return //redirect ? (
-  //   navigate("/")
-  // ) : (
   return (
     <div className="mt-4 grow flex items-center justify-around">
       <div className="mb-32">

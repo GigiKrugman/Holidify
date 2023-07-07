@@ -20,8 +20,8 @@ export default function About() {
             src="https://images.unsplash.com/photo-1517176642928-dfc2da661b3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHRyYXZlbCUyMGFnZW5jeXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60"
           />
           <div className="flex flex-col items-center justify-center">
-            <h6></h6>
-            <p>Your subtext goes here</p>
+            <h6>Traveller in the first place</h6>
+            <p>Notjing better then a lot of practice 😏</p>
           </div>
           <div className="flex flex-col items-center top-7 justify-center">
             <h6>Hard worker</h6>

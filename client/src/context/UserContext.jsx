@@ -11,6 +11,17 @@ export const UserProvider = ({ children }) => {
   const [token, setToken] = useState(localToken);
   const [cart, setCart] = useState(localCart);
 
+  function removeFromCart(bookingId) {
+    setCart((prevCart) =>
+      prevCart.filter((booking) => booking.bookingId !== bookingId)
+    );
+  }
+
+  const clearCart = () => {
+    localStorage.setItem("cart", JSON.stringify([]));
+    setCart([]);
+  };
+
   const setUserAndStore = (userData) => {
     console.log("setUserAndStore called with:", userData);
     localStorage.setItem("user", JSON.stringify(userData));
@@ -37,6 +48,8 @@ export const UserProvider = ({ children }) => {
         setToken: setTokenAndStore,
         cart,
         addToCart,
+        removeFromCart,
+        clearCart,
       }}
     >
       {children}

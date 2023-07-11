@@ -35,7 +35,8 @@ export default function Header() {
           Accomodations
         </Link>
       </div>
-      <DropDownUser />
+      <DropDownUser className="mr-10" />
+      {/* <DropDownCart /> */}
     </div>
   );
 }

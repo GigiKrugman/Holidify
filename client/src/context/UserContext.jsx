@@ -5,9 +5,11 @@ export const UserContext = createContext();
 export const UserProvider = ({ children }) => {
   const localUser = JSON.parse(localStorage.getItem("user")) || null;
   const localToken = localStorage.getItem("token") || null;
+  const localCart = JSON.parse(localStorage.getItem("cart")) || [];
 
   const [user, setUser] = useState(localUser);
   const [token, setToken] = useState(localToken);
+  const [cart, setCart] = useState(localCart);
 
   const setUserAndStore = (userData) => {
     console.log("setUserAndStore called with:", userData);
@@ -20,6 +22,12 @@ export const UserProvider = ({ children }) => {
     setToken(tokenData);
   };
 
+  const addToCart = (item) => {
+    const updatedCart = [...cart, item];
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+    setCart(updatedCart);
+  };
+
   return (
     <UserContext.Provider
       value={{
@@ -27,6 +35,8 @@ export const UserProvider = ({ children }) => {
         setUser: setUserAndStore,
         token,
         setToken: setTokenAndStore,
+        cart,
+        addToCart,
       }}
     >
       {children}

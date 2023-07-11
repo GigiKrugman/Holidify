@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import About from "../pages/About";
 import TravelExperiences from "../pages/TravelExperiences";
-import Accomodations from "../pages/Accomodations";
+import Accommodations from "../pages/AccomodationPages/Accommodations";
 import DropDownUser from "../dropdowns/DropDownUser";
 
 export default function Header() {
@@ -28,8 +28,8 @@ export default function Header() {
           Experiences
         </Link>
         <Link
-          to="accomodations"
-          element={<Accomodations />}
+          to="accommodations"
+          element={<Accommodations />}
           className="mr-4 text-xl font-semibold text-sky-700"
         >
           Accomodations

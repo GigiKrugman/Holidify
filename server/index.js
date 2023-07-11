@@ -2,6 +2,7 @@ const express = require("express");
 var cors = require("cors");
 const app = express();
 const userRoute = require("./routes/user");
+const accomodationRoute = require("./routes/accomodation");
 var cookieParser = require("cookie-parser");
 //const User = require("./models/User");
 //const bcrypt = require("bcrypt");
@@ -22,7 +23,8 @@ app.use(
   })
 );
 
-app.use("/user", userRoute),
-  app.listen(3000, () => {
-    console.log("Server is running on port 3000");
-  });
+app.use("/user", userRoute), app.use("/accommodations", accomodationRoute);
+
+app.listen(3000, () => {
+  console.log("Server is running on port 3000");
+});

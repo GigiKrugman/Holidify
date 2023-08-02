@@ -11,10 +11,17 @@ export const UserProvider = ({ children }) => {
   const [token, setToken] = useState(localToken);
   const [cart, setCart] = useState(localCart);
 
-  function removeFromCart(bookingId) {
-    setCart((prevCart) =>
-      prevCart.filter((booking) => booking.bookingId !== bookingId)
-    );
+  // function removeFromCart(bookingId) {
+  //   setCart((prevCart) =>
+  //     prevCart.filter((booking) => booking.bookingId !== bookingId)
+  //   );
+  // }
+
+  function removeFromCart(index) {
+    const newCart = [...cart];
+    newCart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(newCart));
+    setCart(newCart);
   }
 
   const clearCart = () => {

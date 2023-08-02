@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import BookingWidget from "../../components/BookingWidget";
 import Error from "../../Shared/Error";
+import BackArrow from "../../Shared/BackArrow";
 
 export default function AccommodationsDetailed() {
   const { id } = useParams();
@@ -29,6 +30,7 @@ export default function AccommodationsDetailed() {
 
   return (
     <div className="p-9">
+      <BackArrow to="/accommodations" />
       <div className="grid grid-cols-3 gap-4">
         {accommodation.images.slice(0, 3).map((image, index) => (
           <img

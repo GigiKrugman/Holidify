@@ -1,9 +1,11 @@
-import { useState } from "react";
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import { UserContext } from "../context/UserContext";
+import { Link } from "react-router-dom";
 
 export default function DropDownCart() {
-  const { cart, removeFromCart, clearCart } = useContext(UserContext);
+  // const { cart, removeFromCart, clearCart } = useContext(UserContext);
+
+  const { cart } = useContext(UserContext);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
@@ -32,32 +34,19 @@ export default function DropDownCart() {
       )}
       {dropdownOpen && (
         <div className="absolute right-0 mt-2 p-4 w-48 bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg">
-          <h2 className="text-2xl p-3 font-medium text-sky-300">Your Cart</h2>
-          {cart.map((booking, index) => (
-            <div key={index}>
-              <h3 className="text-lg font-medium mt-2">
-                {booking.accommodation.name}
-              </h3>
-              <p className="text-lg font-medium mt-2">
-                Guests: {booking.numGuests}
-              </p>
-              <p className="text-2xl font-medium mt-2">
-                Total Price: {booking.totalPrice} $
-              </p>
-              <button
-                onClick={() => removeFromCart(booking.bookingId)}
-                className="p-1 mb-5"
-              >
-                Remove Item
-              </button>
-            </div>
-          ))}
-          <button
-            onClick={clearCart}
-            className="px-4 py-3 text-lg text-center text-white bg-red-500 hover:bg-red-700 "
-          >
-            Clear Cart
-          </button>
+          <h2 className="text-2xl p-3 font-medium text-sky-300">
+            {cart.length > 0
+              ? "You have items in the cart"
+              : "You don't have any items in the cart"}
+          </h2>
+          {cart.length > 0 && (
+            <Link
+              to="/checkout"
+              className="px-4 py-3 text-lg text-center text-white bg-red-500 hover:bg-red-700 block text-decoration-none"
+            >
+              Go to Checkout
+            </Link>
+          )}
         </div>
       )}
     </div>

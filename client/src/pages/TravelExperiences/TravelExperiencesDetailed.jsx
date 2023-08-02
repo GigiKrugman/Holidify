@@ -1,8 +1,10 @@
 import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { UserContext } from "../../context/UserContext";
+//import { UserContext } from "../../context/UserContext";
 import axios from "axios";
 import Error from "../../Shared/Error";
+//import { Link } from "react-router-dom";
+import BackArrow from "../../Shared/BackArrow";
 
 export default function TravelExperiencesDetailed() {
   const { id } = useParams();
@@ -28,11 +30,18 @@ export default function TravelExperiencesDetailed() {
   if (error) return <Error />;
 
   const handleBooking = () => {
-    addToCart({ experience, bookingId: Date.now() }); // Adjust as needed
+    const bookingDetails = {
+      bookingId: Math.random().toString(36).substr(2, 9),
+      experience,
+      totalPrice: experience.price,
+    };
+
+    addToCart(bookingDetails);
   };
 
   return (
     <div className="p-9">
+      <BackArrow to="/experiences" />
       <div className="grid grid-cols-3 gap-4 mb-6">
         {experience.images &&
           experience.images
@@ -64,7 +73,7 @@ export default function TravelExperiencesDetailed() {
           onClick={handleBooking}
           className="bg-blue-500 text-white p-3 rounded-md max-w-md w-full text-lg"
         >
-          Book Now
+          Add to Cart
         </button>
       </div>
     </div>

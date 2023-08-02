@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import TravelExperienceCard from "./TravelExperienceCard";
+
 import Error from "../../Shared/Error";
 import axios from "axios";
 

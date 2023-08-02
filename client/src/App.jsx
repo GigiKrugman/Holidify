@@ -11,6 +11,7 @@ import TravelExperiences from "./pages/TravelExperiences/TravelExperiences";
 import TravelExperiencesDetailed from "./pages/TravelExperiences/TravelExperiencesDetailed";
 import Accommodations from "./pages/AccomodationPages/Accommodations";
 import AccommodationsDetailed from "./pages/AccomodationPages/AccommodationsDetailed";
+import Checkout from "./pages/CheckOutPage";
 
 axios.defaults.baseURL = "http://localhost:3000";
 axios.defaults.withCredentials = true;
@@ -32,6 +33,7 @@ function App() {
             path="/accommodations/:id"
             element={<AccommodationsDetailed />}
           />
+          <Route path="checkout" element={<Checkout />} />
           <Route path="home/*">
             <Route index element={<IndexPage />} />
             <Route path="login" element={<Login />} />

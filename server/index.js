@@ -3,6 +3,7 @@ var cors = require("cors");
 const app = express();
 const userRoute = require("./routes/user");
 const accomodationRoute = require("./routes/accomodation");
+const experienceRoute = require("./routes/experience");
 var cookieParser = require("cookie-parser");
 //const User = require("./models/User");
 //const bcrypt = require("bcrypt");
@@ -23,7 +24,9 @@ app.use(
   })
 );
 
-app.use("/user", userRoute), app.use("/accommodations", accomodationRoute);
+app.use("/user", userRoute),
+  app.use("/accommodations", accomodationRoute),
+  app.use("/experiences", experienceRoute);
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000");

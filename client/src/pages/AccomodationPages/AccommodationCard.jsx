@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function AccommodationCard({ accommodation }) {
   return (
-    <div className="border rounded-lg border-sky-700 border-2 overflow-hidden">
+    <div className="rounded-lg border-sky-700 border-2 overflow-hidden">
       <Link to={`/accommodations/${accommodation._id}`}>
         <div className="relative pb-60">
           <img

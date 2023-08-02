@@ -7,7 +7,8 @@ import axios from "axios";
 import { UserProvider } from "./context/UserContext";
 import LandingPage from "./pages/LandingPage";
 import About from "./pages/About";
-import TravelExperiences from "./pages/TravelExperiences";
+import TravelExperiences from "./pages/TravelExperiences/TravelExperiences";
+import TravelExperiencesDetailed from "./pages/TravelExperiences/TravelExperiencesDetailed";
 import Accommodations from "./pages/AccomodationPages/Accommodations";
 import AccommodationsDetailed from "./pages/AccomodationPages/AccommodationsDetailed";
 
@@ -22,6 +23,10 @@ function App() {
           <Route index element={<LandingPage />} />
           <Route path="about" element={<About />} />
           <Route path="experiences" element={<TravelExperiences />} />
+          <Route
+            path="/experiences/:id"
+            element={<TravelExperiencesDetailed />}
+          />
           <Route path="accommodations" element={<Accommodations />} />
           <Route
             path="/accommodations/:id"

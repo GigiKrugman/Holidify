@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import About from "../pages/About";
-import TravelExperiences from "../pages/TravelExperiences";
+import TravelExperiences from "../pages/TravelExperiences/TravelExperiences";
 import Accomodations from "../pages/AccomodationPages/Accommodations";
 
 export default function Footer() {

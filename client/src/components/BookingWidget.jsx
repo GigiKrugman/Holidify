@@ -54,13 +54,13 @@ export default function BookingWidget({ accommodation }) {
   };
 
   return (
-    <div className="bg-white shadow-md rounded-xl p-4 my-5">
-      <div className="text-sky-700 text-2xl font-semibold">Guests</div>
+    <div className="bg-white shadow-md rounded-xl p-20 my-5">
+      <div className="text-sky-700 text-2xl font-semibold  ">Guests</div>
       <input
         type="number"
         value={numGuests}
         onChange={handleGuestsChange}
-        className="mt-4 border border-sky-700 w-full p-2 rounded-md"
+        className="mt-4 border border-sky-700 w-20  p-2 rounded-md"
         placeholder="Number of guests"
       />
       <h2 className="text-sky-700 text-2xl font-semibold mt-8">
@@ -70,7 +70,7 @@ export default function BookingWidget({ accommodation }) {
         <Datepicker
           value={selectedDate}
           onChange={handleDateChange}
-          className="border border-sky-700 w-full p-2 rounded-md"
+          className="border border-sky-700 w-16 p-2 rounded-md"
         />
       </div>
       <button

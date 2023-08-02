@@ -1,15 +1,28 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import TravelExperienceCard from "./TravelExperienceCard";
+import Error from "../../Shared/Error";
+import axios from "axios";
 
 export default function TravelExperiences() {
   const [experiences, setExperiences] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:3000/experiences")
-      .then((res) => res.json())
-      .then((data) => setExperiences(data));
+    const fetchExperiences = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/experiences");
+        setExperiences(response.data);
+      } catch (error) {
+        console.error("Error fetching data from server", error);
+        setError(error);
+      }
+    };
+
+    fetchExperiences();
   }, []);
+
+  if (error) return <Error />;
   return (
     <div>
       <div className="flex justify-center mb-10 p-3">

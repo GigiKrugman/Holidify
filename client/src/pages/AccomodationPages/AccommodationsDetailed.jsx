@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import BookingWidget from "../../components/BookingWidget";
+import Error from "../../Shared/Error";
 
 export default function AccommodationsDetailed() {
   const { id } = useParams();
   const [accommodation, setAccommodation] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     axios
@@ -13,8 +15,13 @@ export default function AccommodationsDetailed() {
       .then((res) => {
         setAccommodation(res.data);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+        setError(error);
+      });
   }, [id]);
+
+  if (error) return <Error />;
 
   if (!accommodation) {
     return <div>Loading...</div>;

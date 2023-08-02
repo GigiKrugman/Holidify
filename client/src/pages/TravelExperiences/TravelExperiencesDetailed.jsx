@@ -2,20 +2,30 @@ import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { UserContext } from "../../context/UserContext";
 import axios from "axios";
+import Error from "../../Shared/Error";
 
 export default function TravelExperiencesDetailed() {
   const { id } = useParams();
   const [experience, setExperience] = useState({});
-  const { addToCart } = useContext(UserContext);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:3000/experiences/${id}`)
-      .then((res) => {
-        setExperience(res.data);
-      })
-      .catch((error) => console.log(error));
+    const fetchExperienceDetail = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:3000/experiences/${id}`
+        );
+        setExperience(response.data);
+      } catch (error) {
+        console.error("Error fetching data from server", error);
+        setError(error);
+      }
+    };
+
+    fetchExperienceDetail();
   }, [id]);
+
+  if (error) return <Error />;
 
   const handleBooking = () => {
     addToCart({ experience, bookingId: Date.now() }); // Adjust as needed

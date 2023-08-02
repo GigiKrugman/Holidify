@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import AccommodationCard from "./AccommodationCard";
+import Error from "../../Shared/Error";
 
 export default function Accommodations() {
   const [accommodations, setAccommodations] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchAccommodations = async () => {
@@ -14,11 +16,14 @@ export default function Accommodations() {
         setAccommodations(response.data);
       } catch (error) {
         console.error("Error fetching data from server", error);
+        setError(error);
       }
     };
 
     fetchAccommodations();
   }, []);
+
+  if (error) return <Error />;
 
   return (
     <div>

@@ -39,9 +39,9 @@ export default function TravelExperiences() {
           <Link
             to={`/experiences/${experience._id}`}
             key={experience._id}
-            className="block mb-6"
+            className="block mb-6 transform transition-transform duration-300 hover:scale-105"
           >
-            <div className="card-trip overflow-hidden bg-white shadow-md rounded p-8">
+            <div className="card-trip overflow-hidden bg-white shadow-md rounded p-8 hover: shadow-lg">
               <img
                 className="h-full w-full object-cover"
                 src={experience.images[0]}

@@ -36,7 +36,7 @@ export default function Accommodations() {
           Accomodations
         </h3>
       </div>
-      <div className="grid grid-cols-4 gap-4 p-8">
+      <div className="grid grid-cols-4 gap-4 p-8 ">
         {accommodations.length > 0 &&
           accommodations.map((accommodation) => (
             <AccommodationCard

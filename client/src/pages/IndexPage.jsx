@@ -35,23 +35,24 @@ export default function IndexPage() {
           src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60"
         />
       </div>
-      <div className="relative h-[screen] sm:h-96 md:h-128">
+      <div className="relative h-screen sm:h-96 md:h-[700px]">
         <img
-          className="object-cover w-full h-[700px] absolute"
+          className="object-cover w-full h-full absolute"
           src="https://images.unsplash.com/photo-1522878129833-838a904a0e9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTE0fHx0cmF2ZWx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60"
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center ">
-          <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-9xl font-extrabold text-white text-center">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-extrabold text-white text-center">
             Best Travel Platform 2023
           </h1>
           <Link
-            className="mt-4 text-4xl font-bold border-4 rounded-lg text-white p-9"
+            className="mt-4 text-2xl sm:text-3xl font-bold border-4 rounded-lg text-white p-4 sm:p-6"
             to="/about"
           >
             About us
           </Link>
         </div>
       </div>
+
       <ProductsWidget />
     </div>
   );

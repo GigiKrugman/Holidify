@@ -27,16 +27,16 @@ export default function Accommodations() {
 
   return (
     <div>
-      <div className="flex justify-center mb-10 p-3">
+      <div className="relative flex justify-center mb-10 p-3">
         <img
-          className="mx-auto border rounded-xl"
+          className="w-full sm:w-3/4 md:w-1/2 lg:w-2/3 xl:w-1/2 mx-auto border rounded-xl"
           src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8aG91c2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=700&q=60"
         />
-        <h3 className="absolute text-4xl font-semibold text-white transform -translate-x-1/2 left-1/2 top-32">
-          Accomodations
+        <h3 className="absolute text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-white transform -translate-x-1/2 left-1/2 top-32">
+          Accommodations
         </h3>
       </div>
-      <div className="grid grid-cols-4 gap-4 p-8 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-3 sm:p-5 lg:p-8">
         {accommodations.length > 0 &&
           accommodations.map((accommodation) => (
             <AccommodationCard

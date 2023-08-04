@@ -8,21 +8,21 @@ import { ReactComponent as Emirates } from "../assets/Images/emirates-airlines.s
 export default function Testimonials() {
   return (
     <div className="flex flex-col">
-      <h6 className="text-3xl text-neutral-600 text-center mt-10 mb-5">
+      <h6 className="text-2xl md:text-3xl text-neutral-600 text-center mt-10 mb-5">
         Talk about us:
       </h6>
-      <div className="flex flex-row justify-around">
-        <NewYorkTime className="h-[250px] w-[150px] fill-inherit" />
-        <Bbc className="h-[250px] w-[150px]" />
-        <Wired className="h-[250px] w-[150px]" />
+      <div className="grid grid-cols-1 md:grid-cols-3 justify-items-center">
+        <NewYorkTime className="h-[150px] md:h-[250px] w-[100px] md:w-[150px] fill-inherit" />
+        <Bbc className="h-[150px] md:h-[250px] w-[100px] md:w-[150px]" />
+        <Wired className="h-[150px] md:h-[250px] w-[100px] md:w-[150px]" />
       </div>
-      <h6 className="text-3xl text-neutral-600 text-center mt-10 mb-5">
-        Our Parners
+      <h6 className="text-2xl md:text-3xl text-neutral-600 text-center mt-10 mb-5">
+        Our Partners
       </h6>
-      <div className="flex flex-row justify-around mt-4 ">
-        <Google className="h-[150px] w-[150px]" />
-        <Skyteam className="h-[150px] w-[150px]" />
-        <Emirates className="h-[150px] w-[150px]" />
+      <div className="grid grid-cols-1 md:grid-cols-3 justify-items-center mt-4 ">
+        <Google className="h-[100px] md:h-[150px] w-[100px] md:w-[150px] mt-8 md:mt-8" />
+        <Skyteam className="h-[100px] md:h-[150px] w-[100px] md:w-[150px] mt-8 md:mt-8" />
+        <Emirates className="h-[100px] md:h-[150px] w-[100px] md:w-[150px] mt-8 md:mt-8" />
       </div>
     </div>
   );

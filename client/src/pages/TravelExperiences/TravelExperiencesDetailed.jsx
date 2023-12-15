@@ -3,11 +3,13 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import Error from "../../Shared/Error";
 import BackArrow from "../../Shared/BackArrow";
+import { UserContext } from "../../context/UserContext"; // Don't forget to import the UserContext
 
 export default function TravelExperiencesDetailed() {
   const { id } = useParams();
   const [experience, setExperience] = useState({});
   const [error, setError] = useState(null);
+  const { addToCart } = useContext(UserContext); // Import addToCart from the context
 
   useEffect(() => {
     const fetchExperienceDetail = async () => {
@@ -34,7 +36,7 @@ export default function TravelExperiencesDetailed() {
       totalPrice: experience.price,
     };
 
-    // addToCart(bookingDetails); // This function is missing in your code snippet. Make sure to include it.
+    addToCart(bookingDetails); // Call the addToCart function from context
   };
 
   return (
